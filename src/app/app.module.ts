@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
-
-
-
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -19,7 +15,8 @@ import { CartComponent } from './cart/cart.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgIf } from '@angular/common';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
 
@@ -30,6 +27,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     SliderComponent,
     CrudComponent,
     CartComponent,
+    ProductCardComponent,
 
   ],
   imports: [
@@ -41,8 +39,11 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     NgbModule,
     NgbCarouselModule,
+
+    NgIf
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
