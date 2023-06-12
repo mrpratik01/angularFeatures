@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+declare let slideRight:any;
+declare let slideLeft:any;
+
 
 @Component({
   selector: 'app-product-card',
@@ -6,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
+
+
+slideRight(){
+  slideRight()
+}
+
+slideLeft(){
+  slideLeft()
+}
+
 
 }
