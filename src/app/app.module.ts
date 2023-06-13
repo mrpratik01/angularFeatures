@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatTableModule} from '@angular/material/table';
+
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -12,11 +14,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { SliderComponent } from './slider/slider.component';
 import { CrudComponent } from './crud/crud.component';
 import { CartComponent } from './cart/cart.component';
+import { TableComponent } from './table/table.component'
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import axios from 'axios';
+
 
 @NgModule({
 
@@ -29,6 +35,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     CartComponent,
     ProductCardComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -36,11 +43,17 @@ import { ProductCardComponent } from './product-card/product-card.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatTableModule,
     AppRoutingModule,
     NgbModule,
     NgbCarouselModule,
+    NgIf,
+    ReactiveFormsModule,
+    TableComponent
 
-    NgIf
+   
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

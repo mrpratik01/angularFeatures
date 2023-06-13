@@ -5,7 +5,7 @@
       <div class="flex flex-col justify-between">
         <div>
           <h2
-            class="text-4xl lg:text-5xl text-pink-600 font-bold leading-tight"
+            class="text-4xl lg:text-5xl text-red-700 font-bold leading-tight"
           >
             Lets Perform CRUD operation 
           </h2>
@@ -16,12 +16,13 @@
        
         </div>
       </div>
-      <div class="">
+      <form [formGroup] = "myForm" (ngSubmit) = "onSubmit(myForm)" class="">
         <div>
           <span class="uppercase text-sm text-gray-600 font-bold"
             >Full Name</span
           >
           <input
+           formControlName="name" 
             class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
             placeholder=""
@@ -32,6 +33,7 @@
             >Email</span
           >
           <input
+          formControlName="email" 
             class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
           />
@@ -40,17 +42,20 @@
           <span class="uppercase text-sm text-gray-600 font-bold"
             >Message</span
           >
-          <textarea
-            class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-          ></textarea>
+          <input
+          formControlName="message" 
+            class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline h-32"
+            type="text"
+          />
         </div>
         <div class="mt-8">
           <button
-            class="uppercase text-sm font-bold tracking-wide bg-pink-600 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+          type="submit"
+            class="uppercase text-sm font-bold tracking-wide bg-red-600 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
           >
            Add to Table
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </body>
