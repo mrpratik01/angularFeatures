@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { Injectable } from '@angular/core';
+import axios from 'axios';
 @Component({
 
   selector: 'app-crud',
   templateUrl: './crud.component.html',
   styleUrls: ['./crud.component.css']
+})
+
+@Injectable({
+  providedIn: 'root'
 })
 export class CrudComponent implements OnInit {
 
@@ -20,10 +25,25 @@ export class CrudComponent implements OnInit {
     });
   }
 
-  onSubmit(form: FormGroup) {
-    console.log('Valid?', form.valid); // true or false
-    console.log('Name', form.value.name);
-    console.log('Email', form.value.email);
-    console.log('Message', form.value.message);
+
+  async onSubmit(form: FormGroup) {
+
+    try{
+
+      await axios.post("http://localhost:3001/api/storeFormData", {
+        name: form.value.name,
+        email: form.value.email,
+        message: form.value.message
+      })
+
+
+
+      console.log(form.valid); // true or false
+      console.log(form.value.name);
+      console.log(form.value.email);
+      console.log(form.value.message);
+    }
+    catch (err){ console.log(err)}
   }
+
 }
