@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     })
 
     
-  }
+  } 
 
   data = []
 

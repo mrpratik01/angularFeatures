@@ -28,7 +28,6 @@
     "@schematics/angular": "^9.1.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
-    "cors": "^2.8.5",
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -58,6 +57,7 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "typescript": "~5.0.2"
-  },
-  "proxy": "http://localhost:3001/api"
+  }
+
+ 
 }

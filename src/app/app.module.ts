@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule} from '@angular/material/sort';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -22,6 +23,9 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { TableComponent } from './table/table.component';
 
 
 @NgModule({
@@ -34,6 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CrudComponent,
     CartComponent,
     ProductCardComponent,
+    TableComponent
+
 
 
   ],
@@ -49,8 +55,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbCarouselModule,
     NgIf,
     ReactiveFormsModule,
-
     HttpClientModule,
+    MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule
+
 
    
 

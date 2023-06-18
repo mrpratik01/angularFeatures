@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Injectable } from '@angular/core';
+
 import axios from 'axios';
 @Component({
 
@@ -9,10 +9,8 @@ import axios from 'axios';
   styleUrls: ['./crud.component.css']
 })
 
-@Injectable({
-  providedIn: 'root'
-})
-export class CrudComponent implements OnInit {
+
+export class CrudComponent implements OnInit  { 
 
   myForm: FormGroup;
   constructor(private fb: FormBuilder) {}
