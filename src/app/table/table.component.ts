@@ -13,16 +13,26 @@ export interface UserData {
 }
 
 const message: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
+'message',
+'message',
+'message',
+'message',
+'message',
+'message',
+'message',
 ];
-const NAMES: string[] = [
+
+const email: string[] = [
+'email',
+'email',
+'email',
+'email',
+'email',
+'email',
+'email',
+
+];
+const name: string[] = [
   'Maia',
   'Asher',
   'Olivia',
@@ -81,19 +91,22 @@ export class TableComponent implements AfterViewInit {
     }
   }
 
+
 }
 
 function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
+  const names =
+    name[Math.round(Math.random() * (name.length - 1))] +
     ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
+    name[Math.round(Math.random() * (name.length - 1))].charAt(0) +
     '.';
 
   return {
     id: id.toString(),
-    name: name,
-    email: Math.round(Math.random() * 100).toString(),
+    name: names,
+    email: email[Math.round(Math.random() * (email.length - 1))],
     message: message[Math.round(Math.random() * (message.length - 1))],
   };
+
+
 }
