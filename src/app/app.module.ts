@@ -31,6 +31,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { TableComponent } from './table/table.component';
 import { FooterComponent } from './footer/footer.component';
 import { PricingComponent } from './pricing/pricing.component';
+import { CounterComponent } from './counter/counter.component';
 
 
 
@@ -57,6 +58,7 @@ const appRoute: Routes = [
     TableComponent,
     FooterComponent,
     PricingComponent,
+    CounterComponent,
 
   ],
 
