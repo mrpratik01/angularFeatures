@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table'
 
 
 import { AppComponent } from './app.component';
@@ -32,6 +32,7 @@ import { TableComponent } from './table/table.component';
 import { FooterComponent } from './footer/footer.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { CounterComponent } from './counter/counter.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -42,6 +43,7 @@ const appRoute: Routes = [
   {path: 'table', component: TableComponent },
   {path: 'cart', component: CartComponent },
   {path: 'footer', component: FooterComponent},
+  {path: 'dialog', component: DialogComponent},
 ]
 
 
@@ -59,6 +61,7 @@ const appRoute: Routes = [
     FooterComponent,
     PricingComponent,
     CounterComponent,
+    DialogComponent,
 
   ],
 
