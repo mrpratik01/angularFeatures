@@ -33,6 +33,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { CounterComponent } from './counter/counter.component';
 import { DialogComponent } from './dialog/dialog.component';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -52,7 +54,6 @@ const appRoute: Routes = [
 
   declarations: [
     AppComponent,
-
     SliderComponent,
     CrudComponent,
     CartComponent,
@@ -60,9 +61,8 @@ const appRoute: Routes = [
     TableComponent,
     FooterComponent,
     PricingComponent,
-    CounterComponent,
+CounterComponent,
     DialogComponent,
-
   ],
 
 
@@ -78,10 +78,10 @@ const appRoute: Routes = [
     MatTableModule,
     NgbModule,
     NgbCarouselModule,
-    NgIf,
+    NgIf, 
     ReactiveFormsModule,
     HttpClientModule,
-    MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatSelectModule, MatSliderModule
+    MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, MatSelectModule, MatSliderModule, MatDialogModule,
 
 
    
