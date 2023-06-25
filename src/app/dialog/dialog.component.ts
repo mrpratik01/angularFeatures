@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { PopupComponent } from '../popup/popup.component';
 
 
 @Component({
@@ -9,12 +11,29 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent {
+
+
+  constructor(private dialog:MatDialog){
+
+  }
+
+
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }  
+
+
+  Openpopup(){
+    this.dialog.open(PopupComponent, {
+      width:'100%',
+      data:{
+        title: 'user edit'
+      }
+    })
   }
 }
 

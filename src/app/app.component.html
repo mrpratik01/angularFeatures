@@ -1,4 +1,4 @@
-<mat-toolbar class="mat-elevation-z8">
+<!-- <mat-toolbar class="mat-elevation-z8">
     <button color="primary" mat-fab aria-label="Example icon button with a home icon">
       <mat-icon>home</mat-icon>
     </button>
@@ -12,9 +12,43 @@
       ><mat-icon class="mat-icon">add_shopping_cart</mat-icon></a
     >
     <a mat-raised-button color="primary" class="nav">Extra Features</a>
+  </mat-toolbar> -->
+
+<div>
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a routerLink="home" mat-button class="nav">Home</a>
+      <a routerLink="product" mat-button class="nav">Product</a>
+      <a routerLink="crud" mat-button class="nav">Crud</a>
+      <a routerLink="dialog" mat-button class="nav">Dialog</a>
+    </div>
   </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="over"
+      opened="false"
+      fxHide.gt-sm="true"
+    >
+      <div fxLayout="column">
+        <a routerLink="home" mat-button class="nav">Home</a>
+        <a routerLink="product" mat-button class="nav">Product</a>
+        <a routerLink="crud" mat-button class="nav">Crud</a>
+        <a routerLink="dialog" mat-button class="nav">Dialog</a>
+      </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
 
 <router-outlet></router-outlet>
-
 
 <app-footer></app-footer>
