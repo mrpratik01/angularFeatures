@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, EventEmitter, Injectable, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogRef, MAT_DIALOG_DATA  } from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -8,6 +8,10 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./popup.component.css']
 })
 export class PopupComponent implements OnInit{
+
+  @Output() myName = new EventEmitter<any>();
+  @Output() myEmail = new EventEmitter<any>();
+  @Output() myMessage = new EventEmitter<any>();
 
   myForm: FormGroup;
 
@@ -24,6 +28,10 @@ export class PopupComponent implements OnInit{
     console.log('Name', form.value.name);
     console.log('Email', form.value.email);
     console.log('Message', form.value.message);
+
+    this.myName.emit(form.value.name)
+    this.myEmail.emit(form.value.email)
+    this.myMessage.emit(form.value.message)
   }
 
   constructor(private ref:MatDialogRef<PopupComponent>){}
@@ -31,4 +39,5 @@ export class PopupComponent implements OnInit{
   closepopup(){
     this.ref.close();
   }
+
 }

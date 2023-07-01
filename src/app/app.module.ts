@@ -15,11 +15,12 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { TableModule } from 'primeng/table';
 import { SliderComponent } from './slider/slider.component';
 import { CrudComponent } from './crud/crud.component';
 import { CartComponent } from './cart/cart.component';
-
+import { NgHorizontalScrollModule } from 'angular-horizontal-scroll-table';
+import { NgFixedHeaderModule } from 'angular-fixed-header-table';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
@@ -82,7 +83,10 @@ const appRoute: Routes = [
     MatSelectModule,
     MatSliderModule,
     MatDialogModule,
-    MatSidenavModule
+    MatSidenavModule,
+    NgFixedHeaderModule,
+    NgHorizontalScrollModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
